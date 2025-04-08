@@ -1,4 +1,4 @@
-namespace UserPostsAPI.Models
+namespace UserPostsAP.Models
 {
     public class Post
     {

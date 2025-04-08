@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using UserPostsAPI.Models;
+using UserPostsAP.Models;
 
-namespace UserPostsAPI.Controllers
+namespace UserPostsAP.Controllers
 {
     [ApiController]
     [Route("userandposts/{id}")]
