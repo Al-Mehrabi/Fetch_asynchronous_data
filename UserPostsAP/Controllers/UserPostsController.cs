@@ -5,7 +5,7 @@ using UserPostsAPI.Models;
 namespace UserPostsAPI.Controllers
 {
     [ApiController]
-  [Route("userandposts")]
+    [Route("userandposts/{id}")]
     public class UserPostsController : ControllerBase
     {
         private readonly HttpClient _httpClient;
@@ -16,14 +16,23 @@ namespace UserPostsAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetUserPosts()
+        public async Task<IActionResult> GetUserPosts(int id)  
         {
             try
             {
-                var userResponse = await _httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/users/1");
-                var user = JsonConvert.DeserializeObject<User>(userResponse);
+                // Fetch user data based on the id
+                var userResponse = await _httpClient.GetAsync($"https://jsonplaceholder.typicode.com/users/{id}");
 
-                var postsResponse = await _httpClient.GetStringAsync("https://jsonplaceholder.typicode.com/posts?userId=1");
+                // Check if the response is successful
+                if (!userResponse.IsSuccessStatusCode)
+                {
+                    return NotFound($"External API error: User {id} not found");
+                }
+
+                
+                var user = JsonConvert.DeserializeObject<User>(await userResponse.Content.ReadAsStringAsync());
+
+                var postsResponse = await _httpClient.GetStringAsync($"https://jsonplaceholder.typicode.com/posts?userId={id}");
                 var posts = JsonConvert.DeserializeObject<List<Post>>(postsResponse);
 
                 var result = new
@@ -35,14 +44,16 @@ namespace UserPostsAPI.Controllers
                         user.Address,
                         user.Phone,
                         user.Website,
-                        user.Company  
+                        user.Company
                     },
                     posts
                 };
+
                 return Ok(result);
             }
             catch (Exception ex)
             {
+
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
