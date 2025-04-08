@@ -1,0 +1,75 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "UserPostsAP/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.OpenApi": "10.0.0-preview.2.25164.1",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "UserPostsAP.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.0-preview.2.25164.1": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.0.0-preview7"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.25.16401"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.0.0-preview7": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UserPostsAP/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.OpenApi/10.0.0-preview.2.25164.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+oiQbsork5SlDHRr+2U2gB5UUbRsc982s+xlrB3NXeKvyRkko7QJCkwCURsf9hZQ+H7V5+48KN/Ss8rjwpPnug==",
+      "path": "microsoft.aspnetcore.openapi/10.0.0-preview.2.25164.1",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.0-preview.2.25164.1.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.0.0-preview7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LXCtofEMitPPLhGYm5rEc8dQ/LfkL7WqSUXCegjDZmLmKjG3lIwSYAgOYmR+n/TX6BCcFfXXWZnpcXm7ylJZBg==",
+      "path": "microsoft.openapi/2.0.0-preview7",
+      "hashPath": "microsoft.openapi.2.0.0-preview7.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    }
+  }
+}
